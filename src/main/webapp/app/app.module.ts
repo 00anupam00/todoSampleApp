@@ -17,6 +17,7 @@ import { TodoSampleAppAccountModule } from './account/account.module';
 import { TodoSampleAppEntityModule } from './entities/entity.module';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
 import { StateStorageService } from './shared/auth/state-storage.service';
+import { TodoSampleAppActivitiesModule } from './activities/activities.module'
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import {
     JhiMainComponent,
@@ -37,6 +38,8 @@ import {
         TodoSampleAppAdminModule,
         TodoSampleAppAccountModule,
         TodoSampleAppEntityModule,
+        TodoSampleAppActivitiesModule
+
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [

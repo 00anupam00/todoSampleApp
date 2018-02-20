@@ -15,6 +15,8 @@ export * from './login/login.service';
 export * from './user/account.model';
 export * from './user/user.model';
 export * from './user/user.service';
+export * from './todo/todo.model'
+export * from './todo/todo.service'
 export * from './model/request-util';
 export * from './model/base-entity';
 export * from './shared-libs.module';

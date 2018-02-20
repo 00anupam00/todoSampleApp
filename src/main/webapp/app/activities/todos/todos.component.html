@@ -1,0 +1,24 @@
+<div class="table-responsive" *ngIf="todos">
+    <h2>Logs</h2>
+
+    <p>There are {{ todos.length }} tasks.</p>
+
+    <span>Filter</span> <input type="text" [(ngModel)]="filter" class="form-control">
+
+    <table class="table table-sm table-striped table-bordered">
+        <thead>
+        <tr title="click to order">
+            <th (click)="orderProp = 'desc'; reverse=!reverse"><span>Description</span></th>
+            <th (click)="orderProp = 'status'; reverse=!reverse"><span>Status</span></th>
+        </tr>
+        </thead>
+
+        <tr *ngFor="let todo of (todos | pureFilter:filter:'name' | orderBy:orderProp:reverse)">
+            <td><small>{{logger.name | slice:0:140}}</small></td>
+            <td>
+                <button (click)="changeLevel(todo.status, 'PENDING')" [ngClass]="(todo.status=='TRACE') ? 'btn-danger' : 'btn-light'" class="btn btn-sm">PENDING</button>
+                <button (click)="changeLevel(todo.status, 'DONE')" [ngClass]="(todo.status=='WARN') ? 'btn-success' : 'btn-light'" class="btn btn-sm">DONE</button>
+            </td>
+        </tr>
+    </table>
+</div>
